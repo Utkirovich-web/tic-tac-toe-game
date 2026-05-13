@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stroke {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke: #000;
+  stroke-width: 4px;
+  fill: none;
+  animation: strokeAni 0.3s forwards 1;
+}
+
+@keyframes strokeAni {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+p,
+h1 {
+  font-size: 4em;
+
+  text-align: center;
+
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #23a6d5 40%,
+    #23a6d5 60%,
+    #fff 80%
+  );
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 2s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+.wrapper {
+  width: 21rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  :first-child {
+    border-top-left-radius: 1rem;
+    border-top: none;
+    border-left: none;
+  }
+
+  :nth-child(2) {
+    border-top: none;
+  }
+
+  :nth-child(4) {
+    border-left: none;
+  }
+
+  :nth-child(6) {
+    border-right: none;
+  }
+
+  :nth-child(8) {
+    border-bottom: none;
+  }
+
+  :nth-child(3) {
+    border-top-right-radius: 1rem;
+    border-top: none;
+    border-right: none;
+  }
+
+  :nth-child(7) {
+    border-bottom: none;
+    border-left: none;
+    border-bottom-left-radius: 1rem;
+  }
+  :last-child {
+    border-bottom-right-radius: 1rem;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  div {
+    width: 7rem;
+    height: 7rem;
+    border: 0.1rem solid #00000073;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
